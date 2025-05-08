@@ -38,4 +38,14 @@ contract PassByref {
         assert(configMap2.data == NEW_VALUE);
     }
 
+    function test_PassingStrings() external {
+        string memory test = "Hello World!";
+        _mofifyString(test);
+        return;
+    }
+
+    function _mofifyString(string memory input) internal pure {
+        input = "GM World!";
+    }
+
 }
