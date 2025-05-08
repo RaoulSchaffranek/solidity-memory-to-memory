@@ -41,11 +41,16 @@ contract PassByref {
     function test_PassingStrings() external {
         string memory test = "Hello World!";
         _mofifyString(test);
+        _mofidyString2(test);
         return;
     }
 
     function _mofifyString(string memory input) internal pure {
         input = "GM World!";
+    }
+
+    function _mofidyString2(string memory input) internal pure {
+        bytes(input)[0] = "A";
     }
 
 }
